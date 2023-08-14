@@ -121,13 +121,13 @@ event.listen("MouseInput", function(button, down) --                    SECLECTI
                                 xpos1 = xface
                                 ypos1 = yface
                                 zpos1 = zface
-                                print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
+                                -- print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
                             end
                             if button == 2 then                                          -- RIGHT MB
                                 xpos2 = xface
                                 ypos2 = yface
                                 zpos2 = zface
-                                print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
+                                -- print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
                             end
                         end
                     end
@@ -169,7 +169,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             cmdname = string.lower(cmdname)
             if xpos1 == nil or xpos2 == nil  then
                 if cmdname == "$thrutool" or cmdname == "$mutechat" or cmdname == "$wand" or cmdname == "$up" or cmdname == "$pos1" or cmdname == "$pos2" or cmdname == "$help" or cmdname == "$selnear" or cmdname == "$selectnear" then else
-                    print("§eBefore Doing a command, please select an area")
+                    -- print("§eBefore Doing a command, please select an area")
                     goto endOfChatFunc
                 end
             end
@@ -178,7 +178,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             cmdname = string.lower(cmdname)
             if cmdname == "$fill" then-- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - FILL- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -  -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                 if arg1 == nil then
-                    print("§ePlease specify the block you would like to fill")
+                    -- print("§ePlease specify the block you would like to fill")
                 end
                 xstep=1
                 if (xpos1 > xpos2) then              --X FIX
@@ -210,7 +210,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                 replacewhat = arg1
                 replacewith = arg2
                 
-                print("§aReplacing §f " .. replacewhat .. "§a with §f " .. replacewith)
+                -- print("§aReplacing §f " .. replacewhat .. "§a with §f " .. replacewith)
                 xstep=1
                 if (xpos1 > xpos2) then              --X FIX
                     xstep=-1
@@ -241,7 +241,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             end
 
             if cmdname == "$line" then-- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - LINE -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                print("§a Drawing line")
+                -- print("§a Drawing line")
                 xline, yline, zline = player.pposition()
                 yaw, pitch = player.rotation()
                 client.execute("execute /tp " .. xpos1 .. " " .. ypos1 .. " " .. zpos1 .. " facing " .. xpos2 .. " " .. ypos2 .. " " .. zpos2)
@@ -263,7 +263,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             end
 
             if cmdname == "$mirror" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -MIRROR - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                print("§a Mirroring")
+                -- print("§a Mirroring")
                 if (xpos1 > xpos2) then              --X FIX
                     inbetweenyvariable = xpos1
                     xpos1 = xpos2
@@ -299,7 +299,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
 
             if cmdname == "$sphere" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - -  SPHERE - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
                 counteryyyyy = 0
-                print("§aMaking a sphere of §f "..arg1)
+                -- print("§aMaking a sphere of §f "..arg1)
                 xdif = xpos1-xpos2
                 ydif = ypos1-ypos2
                 zdif = zpos1-zpos2
@@ -307,7 +307,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                 for xa = xpos1-SPHERERAD-1, xpos1+SPHERERAD+1, 1 do
                     for ya = ypos1-SPHERERAD-1, ypos1+SPHERERAD+1, 1 do
                         for za = zpos1-SPHERERAD-1, zpos1+SPHERERAD+1 , 1 do
-                        -- print (xa .. " ".. ya .. " "..za)
+                        -- -- print (xa .. " ".. ya .. " "..za)
                             xdif = xa-xpos1
                             ydif = ya-ypos1
                             zdif = za-zpos1
@@ -332,11 +332,11 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
 
             if cmdname == "$circle" then  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - -CIRCLE - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
                 if arg1 == "x" or arg1 == "y" then else
-                    print("No specified axis, assuming x")
+                    -- print("No specified axis, assuming x")
                     arg2 = arg1
                     arg1 = "x"
                 end
-                print("§aMaking circle of §f" .. arg2 .. "§a and in the§f " .. arg1 .. " §a plain")
+                -- print("§aMaking circle of §f" .. arg2 .. "§a and in the§f " .. arg1 .. " §a plain")
                 xdif = xpos1-xpos2
                 ydif = ypos1-ypos2
                 zdif = zpos1-zpos2
@@ -364,7 +364,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                             client.execute("execute fill ~ ~ ~ ^ ^ ^"..CIRCLERAD.. " " .. arg2NEW )
                         end
                     else
-                        print("§eThis is not a valid input (please put x or y)")
+                        -- print("§eThis is not a valid input (please put x or y)")
                     end
                     client.execute("execute /tp @s " .. x .. " " .. y .. " " .. z)
                 else
@@ -388,7 +388,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                             client.execute("execute setblock ^ ^ ^"..CIRCLERAD.. " " .. arg2NEW )
                         end
                     else
-                        print("§dThis is not a valid input (please put x or y)")
+                        -- print("§dThis is not a valid input (please put x or y)")
                     end
                 client.execute("execute /tp @s " .. x .. " " .. y .. " " .. z)
                 end
@@ -399,7 +399,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             end
 
             if cmdname == "$wall" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - - - - WALL - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                print("§aMaking wall")
+                -- print("§aMaking wall")
                 if arg2 == nil then
                     arg2 = 1
                 end
@@ -428,10 +428,10 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             if cmdname == "$infinitewater" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - -INFINTE WATER - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
                 if doinfinitewater == true then
                     doinfinitewater = false
-                    print("§cStopped infinitewater")
+                    -- print("§cStopped infinitewater")
                 else
                     doinfinitewater = true
-                    print("§aStarted infinitewater. Type $infinitewater to stop")
+                    -- print("§aStarted infinitewater. Type $infinitewater to stop")
                 end
                 
                 CommandDone = true
@@ -442,7 +442,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             if cmdname == "$build-up" or cmdname == "$buildup" or cmdname == "$bu" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- BUILD-UP - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
                 replacewhat = arg1
                 howhigh = arg2
-                print("§a Building-Up §f" .. replacewhat .." " .. howhigh .. " §ablocks.")
+                -- print("§a Building-Up §f" .. replacewhat .." " .. howhigh .. " §ablocks.")
                 if (xpos1 > xpos2) then              --X FIX
                     inbetweenyvariable = xpos1
                     xpos1 = xpos2
@@ -461,11 +461,11 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                 for xInSelectedRange = xpos1, xpos2, 1 do
                     for yinSelectedRange = ypos2, ypos1, -1 do
                         for zinSelectedRange = zpos1, zpos2, 1 do
-                            --print("Found block "..dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange).name)
+                            ---- print("Found block "..dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange).name)
                             if(dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange).name == replacewhat)then
                                 for howhighcount = 1, howhigh, 1 do
                                     strtoexe = "execute /setblock " .. tostring(xInSelectedRange).. " " ..tostring(yinSelectedRange+howhighcount).. " " .. tostring(zinSelectedRange) .. " " .. replacewhat
-                                --  print(strtoexe)
+                                --  -- print(strtoexe)
                                     client.execute(strtoexe)
                                 end
                             end
@@ -479,12 +479,12 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             end
 
             if cmdname == "$help" then -- -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - HELP  - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                --print("Select 2 positions using a wooden sword then type one of the commands to affect that area.\n When the syntax says \"block\" it means either something like \"dirt\" or something like \"50%dirt,50%air\" \n $fill | runs a normal fill command | $fill <block> \n $replace | replaces all of the first argument's block to the second within the selected range | $replace <replacewhat> <replacewith> \n $line | creates a line between the two selected points | $line <block> [width/precision] \n $mirror | mirrors one side of the blue line to the other. Doesn't work with block states| $mirror \n $wall | creates a wall between two points | $wall <block> [width/precision] \n $infinitewater | all non-source water blocks get turned into sources so can spread infinitly in any direction aside from up \n $circle | makes a circle with the radius of the distance between the two selected points (the center being the first) | $circle <x or y> <block> [true/fasle:fill] \n $sphere | makes a sphere with the radius of the distance between the two selected points | $sphere <block> [true/fasle:fill] \n $HUD | toggles the coordinates of the two selected points | $HUD \n $build-up | duplicates all of the specified block up a specified amount of times | $build-up <block> <height> \n $help | i think you already know how to use this one | $help \n $pos1 | sets position 1 to your current coordinates (your feet) | $pos1 \n $pos2 | same as pos1 | $pos2 \n $up | teleports you up a specified amount of blocks upward and places a block below you | $up <height> \n $thrutool | when pressed against a block click and it will teleport you to the other side of the block/s (intended for going in and out of builds without using a door). Limit of 356 blocks | $thrutool\n $copy | Copies the selected area to a file in ..scripts\\data | $copy \n $paste | pastes the file in the file with no rotational changes. !!WARNING!! This function is laggy and doesn't do block states with 1.20 blocks so if your pasting very precisly or large build just use structure blocks | $paste [true/false:skip/keep air]\n $wand | gives you a wooden sword | $wand   ")
+                ---- print("Select 2 positions using a wooden sword then type one of the commands to affect that area.\n When the syntax says \"block\" it means either something like \"dirt\" or something like \"50%dirt,50%air\" \n $fill | runs a normal fill command | $fill <block> \n $replace | replaces all of the first argument's block to the second within the selected range | $replace <replacewhat> <replacewith> \n $line | creates a line between the two selected points | $line <block> [width/precision] \n $mirror | mirrors one side of the blue line to the other. Doesn't work with block states| $mirror \n $wall | creates a wall between two points | $wall <block> [width/precision] \n $infinitewater | all non-source water blocks get turned into sources so can spread infinitly in any direction aside from up \n $circle | makes a circle with the radius of the distance between the two selected points (the center being the first) | $circle <x or y> <block> [true/fasle:fill] \n $sphere | makes a sphere with the radius of the distance between the two selected points | $sphere <block> [true/fasle:fill] \n $HUD | toggles the coordinates of the two selected points | $HUD \n $build-up | duplicates all of the specified block up a specified amount of times | $build-up <block> <height> \n $help | i think you already know how to use this one | $help \n $pos1 | sets position 1 to your current coordinates (your feet) | $pos1 \n $pos2 | same as pos1 | $pos2 \n $up | teleports you up a specified amount of blocks upward and places a block below you | $up <height> \n $thrutool | when pressed against a block click and it will teleport you to the other side of the block/s (intended for going in and out of builds without using a door). Limit of 356 blocks | $thrutool\n $copy | Copies the selected area to a file in ..scripts\\data | $copy \n $paste | pastes the file in the file with no rotational changes. !!WARNING!! This function is laggy and doesn't do block states with 1.20 blocks so if your pasting very precisly or large build just use structure blocks | $paste [true/false:skip/keep air]\n $wand | gives you a wooden sword | $wand   ")
                 local keywordColor = "§e"  -- Yellow color for keywords
                 local usageColor = "§a"    -- Green color for usage
                 local dividerColor = "§f"  -- Grey color for dividers
                 
-                print("Select 2 positions using a wooden sword then type one of the commands to affect that area.\n" ..
+                -- print("Select 2 positions using a wooden sword then type one of the commands to affect that area.\n" ..
                     "When the syntax says \"block\", it means either something like \"dirt\" or something like \"50%dirt,50%air\"\n" ..
                     dividerColor .. "------------------------------\n" ..
                     keywordColor .. "$fill§r " .. dividerColor .. "| §7runs a normal fill command " .. dividerColor .. "| §7" .. usageColor .. "$fill§r <block>\n" ..
@@ -511,23 +511,23 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
 
 
             if cmdname == "$dupespin" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - -DUPESPIN- - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                print("§eThis Command is UNSUPPORED")
+                -- print("§eThis Command is UNSUPPORED")
                 xstep=1 ---                                  NOT FOR USE NOT FOR USE NOT FOR USE NOT FOR USE NOT FOR USE NOT FOR USE NOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USENOT FOR USE  
                 
-                print("This Command is UNSUPPORED")if (xpos1 > xpos2) then              --X FIX
+                -- print("This Command is UNSUPPORED")if (xpos1 > xpos2) then              --X FIX
                     xstep=-1
                 
-                print("This Command is UNSUPPORED")end
+                -- print("This Command is UNSUPPORED")end
                 ystep = 1
                 if (ypos1 > ypos2) then              --YFIX
                     ystep = -1
                 end
-                print("This Command is UNSUPPORED")
+                -- print("This Command is UNSUPPORED")
                 zstep = 1
                 if (zpos1 > zpos2) then              --ZFIX
                     zstep = -1
                 end
-                print("This Command is UNSUPPORED")
+                -- print("This Command is UNSUPPORED")
                 for xInSelectedRange = xpos1, xpos2, xstep do
                     for yinSelectedRange = ypos1, ypos2, ystep do
                         for zinSelectedRange = zpos1, zpos2, zstep do
@@ -545,7 +545,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                         end
                     end
                 end
-                print("This Command is UNSUPPORED")
+                -- print("This Command is UNSUPPORED")
             end
             
             if cmdname == "$pos1" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - POS1- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -553,7 +553,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                 xpos1 = x
                 ypos1 =y
                 zpos1 =z
-                print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
+                -- print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
                 CommandDone = true
                 
             end
@@ -563,14 +563,14 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                 xpos2 = x
                 ypos2 =y
                 zpos2 =z
-                print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
+                -- print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
                 CommandDone = true
             end
 
             if cmdname == "$up" then-- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - -  UP -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - - 
-                print("§a Done!")
+                -- print("§a Done!")
                 if arg1 == nil then
-                    print("§ePlease specify an amount of blocks to go up")
+                    -- print("§ePlease specify an amount of blocks to go up")
                 else
                     client.execute("execute tp @s ~ ~"..arg1 .. " ~")
                     client.execute("execute setblock ~ ~-1 ~ glass")
@@ -585,10 +585,10 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
 
             if cmdname == "$thrutool" then -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - THRUTOOL -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - -  -- - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -- - - - - - - - - - - - - -  
                 if ThruTool == true then
-                    print("§cThruTool is now false")
+                    -- print("§cThruTool is now false")
                     ThruTool = false
                 else
-                    print("§aThruTool is now true")
+                    -- print("§aThruTool is now true")
                     ThruTool = true
                 end
                 playCustomSound("WEswitch.mp3")
@@ -639,7 +639,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                     end
                 end
                 io.close(ClipboardFile)
-                print("§aCopied")
+                -- print("§aCopied")
                 if DingS then
                     playCustomSound("WEding.mp3")
                 end
@@ -670,7 +670,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                     zstep = -1
                 end
                 counter = 3
-                print(xdif222.. " " .. ydif222.. " " .. zdif222)
+                -- print(xdif222.. " " .. ydif222.. " " .. zdif222)
                 for xInSelectedRange = xpos1, xpos1+xdif222, 1 do
                     for yinSelectedRange = ypos1, ypos1+ydif222, 1 do
                         for zinSelectedRange = zpos1, zpos1+zdif222, 1 do
@@ -679,7 +679,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                             if arg1 == "fasle" or nil then
                                 if CURRENTBLOCK == "air" then
                                     goto skip
-                                    print("§aSKipping air blocks when copying, not skipping will lag and maybe crash your game alot depending on size.§eTo not skip type $paste true")
+                                    -- print("§aSKipping air blocks when copying, not skipping will lag and maybe crash your game alot depending on size.§eTo not skip type $paste true")
                                 end
                             else
                                 if dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange) == "air" and CURRENTBLOCK == "air" then
@@ -692,7 +692,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                         end
                     end
                 end
-                print("§aPasted")
+                -- print("§aPasted")
                 if DingS then
                     playCustomSound("WEding")
                 end
@@ -727,7 +727,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
                 end
                 areaOfSelection = xdif*ydif*zdif
                 
-                print(areaOfSelection .. " blocks are selected")
+                -- print(areaOfSelection .. " blocks are selected")
                 
                 
                 CommandDone = true
@@ -749,7 +749,7 @@ event.listen("ChatMessageAdded", function(message, username, type, xuid)
             end
 
             if CommandDone then else
-                print("§e\""..cmdname .. "\" is not a supported command. Do \"$help\" for a list of commands!" )
+                -- print("§e\""..cmdname .. "\" is not a supported command. Do \"$help\" for a list of commands!" )
             end
 
         end
@@ -909,7 +909,7 @@ function blockfiguer(blockstring)
                 end
             end
         else
-            print("§eInvalid Input. The sum of percentages don't equal 100")
+            -- print("§eInvalid Input. The sum of percentages don't equal 100")
         end
     else
         return (blockstring)
@@ -5438,7 +5438,7 @@ local stateTable =
     else
        DataNEW = stateTable[Nameyface][Datay+1]
        if DataNEW == nil then 
-        print(Nameyface.. " " .. Datay) 
+        -- print(Nameyface.. " " .. Datay) 
     end
         return(Nameyface .. DataNEW)
     end
